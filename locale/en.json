@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Provider Model Picker",
+    "description": "Groups the composer model list by provider with a collapsible arrow per provider, keeps model search, and leaves the model/reasoning root menu unchanged."
+  }
+}

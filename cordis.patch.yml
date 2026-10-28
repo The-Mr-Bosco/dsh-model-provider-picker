@@ -1,0 +1,3 @@
+- insert:
+    - id: model-provider-picker
+      name: dsh-model-provider-picker
