@@ -78,7 +78,7 @@ window.__ModuleLoader__.load({
 .dsh-mpp-triggerIcon{display:var(--dsh-composer-model-icon-display,none);flex:none}
 .dsh-mpp-chevron{flex:none;color:var(--dsw-alias-label-caption);transition:transform .12s}
 .dsh-mpp-chevronOpen{transform:rotate(180deg)}
-.dsh-mpp-menu{position:fixed;z-index:1100;display:flex;flex-direction:column;width:max-content;min-width:min(268px,100vw - 32px);max-width:min(420px,100vw - 32px);max-height:min(380px,100vh - 96px);padding:4px;overflow:hidden;border:1px solid var(--dsw-alias-border-l1);border-radius:var(--dsw-radius-lg,12px);background:var(--dsw-alias-bg-overlay,var(--dsw-alias-bg-layer-1));box-shadow:var(--dsw-elevation-prominent,0 12px 32px rgba(0,0,0,.24));color:var(--dsw-alias-label-primary);font:inherit;font-size:13px;line-height:20px}
+.dsh-mpp-menu{position:fixed;z-index:1100;display:flex;flex-direction:column;width:max-content;min-width:min(268px,100vw - 32px);max-width:min(420px,100vw - 32px);max-height:min(380px,100vh - 96px);padding:4px;overflow:hidden;border:0;border-radius:var(--dsw-radius-lg,16px);background:var(--dsw-specific-menu,var(--dsw-alias-bg-layer-1));backdrop-filter:var(--dsw-menu-backdrop-filter,blur(40px) saturate(150%));-webkit-backdrop-filter:var(--dsw-menu-backdrop-filter,blur(40px) saturate(150%));box-shadow:var(--dsw-elevation-prominent,0 0 0 .5px var(--dsw-alias-border-l1),0 3px 8px 0 #0000000a,0 0 20px 0 #0000000d);--dsw-elevation-stroke-color:var(--dsw-alias-border-l1);--dsh-scrollbar-thumb:var(--dsw-alias-scrollbar-bg-l2);--dsh-scrollbar-thumb-hover:var(--dsw-alias-scrollbar-hover-l2);color:var(--dsw-alias-label-primary);font:inherit;font-size:13px;line-height:20px}
 .dsh-mpp-status,.dsh-mpp-empty{padding:8px;color:var(--dsw-alias-label-tertiary);font-size:12px;line-height:18px}
 .dsh-mpp-error,.dsh-mpp-warning{display:flex;align-items:flex-start;justify-content:space-between;gap:6px;margin-bottom:3px;padding:6px 7px;border-radius:var(--dsw-radius-md);background:var(--dsw-alias-interactive-bg-hover-danger,rgba(220,50,50,.1));color:var(--dsw-alias-state-error-primary);font-size:11px;line-height:16px}
 .dsh-mpp-warning{background:var(--dsw-alias-bg-module-platform,var(--dsw-alias-bg-layer-2));color:var(--dsw-alias-state-warn-label,var(--dsw-alias-state-warn-primary))}
@@ -93,7 +93,7 @@ window.__ModuleLoader__.load({
 .dsh-mpp-groups{display:flex;flex-direction:column;min-height:0;overflow-y:auto}
 .dsh-mpp-group{display:flex;flex-direction:column;flex:none}
 .dsh-mpp-provider{display:flex;align-items:center;gap:6px;box-sizing:border-box;width:100%;min-height:34px;padding:5px 7px;border:none;border-radius:var(--dsw-radius-md);background:0 0;color:var(--dsw-alias-label-secondary);font:inherit;font-size:13px;font-weight:500;line-height:20px;text-align:left;cursor:pointer}
-.dsh-mpp-provider:hover:not(:disabled),.dsh-mpp-provider:focus-visible,.dsh-mpp-providerCurrent{background:var(--dsw-alias-interactive-bg-hover)}
+.dsh-mpp-provider:hover:not(:disabled),.dsh-mpp-provider:focus-visible{background:var(--dsw-alias-interactive-bg-hover)}
 .dsh-mpp-provider:focus-visible{outline:none}
 .dsh-mpp-providerName{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .dsh-mpp-providerCheck{display:grid;flex:none;place-items:center;color:var(--dsw-alias-label-primary)}
@@ -103,7 +103,7 @@ window.__ModuleLoader__.load({
 .dsh-mpp-model{display:flex;align-items:center;gap:6px;box-sizing:border-box;width:100%;min-height:32px;padding:4px 7px;border:none;border-radius:var(--dsw-radius-md);background:0 0;color:var(--dsw-alias-label-primary);font:inherit;font-size:13px;font-weight:400;line-height:18px;text-align:left;cursor:pointer}
 .dsh-mpp-model:hover:not(:disabled),.dsh-mpp-model:focus-visible{background:var(--dsw-alias-interactive-bg-hover);outline:none}
 .dsh-mpp-model:disabled{color:var(--dsw-alias-label-dimmed);cursor:default}
-.dsh-mpp-modelSelected{background:var(--dsw-alias-interactive-bg-hover)}
+.dsh-mpp-modelSelected{background:0 0}
 .dsh-mpp-check{display:grid;flex:0 0 14px;place-items:center}
 .dsh-mpp-checkIcon{width:14px;height:14px}
 .dsh-mpp-modelName{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -659,6 +659,7 @@ window.__ModuleLoader__.load({
             ref: menuRef,
             id: `${id}-menu`,
             className: 'dsh-mpp-menu',
+            'data-menu-material': '',
             style: menuPos === null ? MEASURE_STYLE : menuPos,
             role: pane === 'root' ? 'menu' : 'group',
             'aria-label': tr('menu.aria'),
